@@ -1,42 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TaskOne
 {
     public partial class PageTwo : ContentPage
     {
-        
+        FileManager fileManager;
+
         public PageTwo()
         {            
             InitializeComponent();            
         }
-
         
-
-        void OnSaveButtonClicked(object sender, EventArgs e)
+        async void OnSaveButtonClicked(object sender, EventArgs e)
         {            
-            string msg = "Name title: \"" + editor.Text + "\" \nTime changes: " + DateTime.Now.ToString("u") + "\n\n";
-            Config config = new Config();
-            if (File.Exists(config.GetFileNamesTitles()))
-            {                
-                File.AppendAllText(config.GetFileNamesTitles(), msg);
-            }
-            else
-            {
-                File.WriteAllText(config.GetFileNamesTitles(), msg);
-            }
-            File.WriteAllText(config.GetFileChangesNameTitle(), editor.Text);
-            Navigation.InsertPageBefore(new MainPage { Title = editor.Text}, this);
-            
-        }
-
-         
-
+            string msg = "Name title: \"" + editor.Text + "\" \n" +
+                         "Time changes: " + DateTime.Now.ToString("u") + "\n\n";
+            fileManager = new FileManager();
+            fileManager.WriteFileLog(msg);
+            App.Current.MainPage = new NavigationPage(new MainPage { Title = editor.Text });
+            await Navigation.PopToRootAsync();
+        }         
     }
 }

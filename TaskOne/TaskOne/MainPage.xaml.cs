@@ -5,29 +5,26 @@ using Xamarin.Forms;
 namespace TaskOne
 {
     public partial class MainPage : ContentPage
-    {       
+    {
+        
         public MainPage()
         {
-            InitializeComponent();
-            Config config = new Config();
-            if (File.Exists(config.GetFileChangesNameTitle()))
-            {
-                this.Title = File.ReadAllText(config.GetFileChangesNameTitle());
-            }
-            else
-            {
-                this.Title = "Main title";
-            }
+            InitializeComponent();           
+        }
+
+        public void SetTitle(string titleName)
+        {
+            this.Title = titleName;
         }
 
         async void OnNextPageTwoButtomClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PageTwo { Title = "Page 2" });
+            await Navigation.PushAsync(new PageTwo ());
         }
 
         async void OnNextPageThreeButtomClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PageThree { Title = "Page 3" });
+            await Navigation.PushAsync(new PageThree ());
         }
     }
 }

@@ -1,30 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace TaskOne
 {
-    
+
     public partial class PageThree : ContentPage
     {
+        FileManager fileManager;
+
         public PageThree()
         {
             InitializeComponent();
-            Config config = new Config();
-            if (File.Exists(config.GetFileNamesTitles()))
-            {
-                labelChangesList.Text = File.ReadAllText(config.GetFileNamesTitles());
-            }
-            else
-            {
-                labelChangesList.Text = "No changes";
-            }
+            fileManager = new FileManager();
+            labelChangesList.Text = fileManager.SetTextFileLog();            
         }
     }
 }

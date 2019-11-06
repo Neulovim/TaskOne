@@ -2,14 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskOne.PageTwo">
-    <StackLayout Margin="10,55,10,10">
+    <StackLayout Margin="10,35,10,10">
         <Editor x:Name="editor"
-            Placeholder="Enter new main title name"
-            HeightRequest="100" />
-        
-            <Button 
-                    Text="Page 2"
-                    Clicked="OnSaveButtonClicked" />
-        
+            Placeholder="Enter new name title "
+                VerticalOptions="CenterAndExpand"
+            HeightRequest="150" />
+        <Button Text="Save"
+                VerticalOptions="StartAndExpand"
+                Clicked="OnSaveButtonClicked" />
     </StackLayout>
 </ContentPage>

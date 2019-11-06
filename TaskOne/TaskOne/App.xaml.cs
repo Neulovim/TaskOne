@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace TaskOne
 {
@@ -9,8 +7,7 @@ namespace TaskOne
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage { Title = "Main page"});
         }
 
         protected override void OnStart()
