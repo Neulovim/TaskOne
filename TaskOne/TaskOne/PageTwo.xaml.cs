@@ -24,7 +24,7 @@ namespace TaskOne
         async void GoNewMainPage()
         {
             App.Current.MainPage = new NavigationPage(new MainPage { Title = editor.Text });
-            await Navigation.PopToRootAsync();
+            await Navigation.PopAsync();
         }
     }
 }
