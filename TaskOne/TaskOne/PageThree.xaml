@@ -4,10 +4,5 @@
              x:Class="TaskOne.PageThree">
     <StackLayout Margin="10,35,10,10">
         <ListView ItemsSource="{Binding TextListView}" />
-
-        <Label x:Name="labelChangesList"
-                 FontSize="Body"
-                 VerticalTextAlignment="Start"
-                 HorizontalOptions="CenterAndExpand" />
     </StackLayout>
 </ContentPage>

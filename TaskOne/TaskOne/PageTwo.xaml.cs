@@ -18,7 +18,6 @@ namespace TaskOne
                          "Time changes: " + DateTime.Now.ToString("u") + "\n";
             fileManager = new FileManager();
             fileManager.WriteFileLog(msg);
-            PageManager pageManager = new PageManager();
             GoNewMainPage();            
         }   
         

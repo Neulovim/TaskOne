@@ -4,9 +4,9 @@
              x:Class="TaskOne.PageTwo">
     <StackLayout Margin="10,35,10,10">
         <Editor x:Name="editor"
-            Placeholder="Enter new name title "
+            Placeholder="Enter new title name"
                 VerticalOptions="CenterAndExpand"
-            HeightRequest="150" />
+            HeightRequest="100" />
         <Button Text="Save"
                 VerticalOptions="StartAndExpand"
                 Clicked="OnSaveButtonClicked" />

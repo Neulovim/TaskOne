@@ -8,7 +8,6 @@ namespace TaskOne
         public MainPage()
         {
             InitializeComponent();
-            this.BindingContext = new PageManager { };
         }
 
         public void SetTitle(string titleName)
