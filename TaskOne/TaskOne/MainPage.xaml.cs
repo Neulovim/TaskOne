@@ -1,15 +1,14 @@
 ﻿using System;
-using System.IO;
 using Xamarin.Forms;
 
 namespace TaskOne
 {
     public partial class MainPage : ContentPage
-    {
-        
+    {   
         public MainPage()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            this.BindingContext = new PageManager { };
         }
 
         public void SetTitle(string titleName)

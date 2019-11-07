@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace TaskOne
@@ -19,16 +20,21 @@ namespace TaskOne
             }
         }
 
-        public string SetTextFileLog()
+        public List<string> GetTextFileLog()
         {
-            if (File.Exists(pathFileLog))
+            List<string> textFileLog = new List<string>();
+            if (File.Exists(pathFileLog) || pathFileLog != null)
             {
-                return File.ReadAllText(pathFileLog);
+                foreach (string element in File.ReadAllLines(pathFileLog))
+                {
+                    textFileLog.Add(element);
+                }
             }
             else
             {
-                return "No changes";
+                textFileLog.Add("No changes");
             }
+            return textFileLog;
         }
     }
 }
