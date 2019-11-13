@@ -14,8 +14,7 @@ namespace TaskOne
         
         void OnSaveButtonClicked(object sender, EventArgs e)
         {            
-            string msg = "Name title: \"" + editor.Text + "\" \n" +
-                         "Time changes: " + DateTime.Now.ToString("u") + "\n";
+            string msg = "Name: \"" + editor.Text + "\". " + "Time: " + DateTime.Now.ToString("u") + "\n";
             fileManager = new FileManager();
             fileManager.WriteFileLog(msg);
             GoNewMainPage();            
